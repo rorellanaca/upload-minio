@@ -22,9 +22,6 @@ export class FileUploadController {
     @ApiOperation({ summary: 'Upload File' })
     @UseInterceptors(FileInterceptor('file'))
     async uploadImage(@UploadedFile() file: BufferedFile, @Body() fileResquet: uploadRequestModel) {
-        console.log(file)
-        console.log(fileResquet)
-        //let request: uploadRequestModel = { bucketName: fileResquet["bucketName"], path: fileResquet["path"] };
         return await this.fileUploadService.uploadFile(file, fileResquet);
     }
 
