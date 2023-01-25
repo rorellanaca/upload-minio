@@ -24,5 +24,4 @@ export class FileUploadController {
     async uploadImage(@UploadedFile() file: BufferedFile, @Body() fileResquet: uploadRequestModel) {
         return await this.fileUploadService.uploadFile(file, fileResquet);
     }
-
 }
