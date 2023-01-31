@@ -15,7 +15,7 @@ export class FileUploadService {
         const uploaded_file = await this.minioClientService.upload(file, fileResquet);
         let reponse: generalReponse = {
             statusCode: HttpStatus.OK,
-            message: `${Constants.MSG_SUCCESS} - ${uploaded_file.fileName}`,
+            message: `${Constants.MSG_SUCCESS_UPLOAD} - ${uploaded_file.fileName}`,
             uuid: uuidv4(),
             status: Constants.SUCCESSFUL
         }

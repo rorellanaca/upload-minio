@@ -95,7 +95,7 @@ export class MinioClientService {
                 })
             })
 
-            return this.returnGeneralReponse(data)
+            return this.returnGeneralReponse(data, Constants.MSG_SUCCESS_LIST)
 
         } catch (error) {
             this.throwError(error)
@@ -136,10 +136,10 @@ export class MinioClientService {
      * @return {*} 
      * @memberof MinioClientService
      */
-    private returnGeneralReponse(response: any) {
+    private returnGeneralReponse(response: any, message: string) {
         let reponse: generalReponse = {
             statusCode: HttpStatus.OK,
-            message: `${Constants.MSG_SUCCESS}`,
+            message: message,
             uuid: uuidv4(),
             status: Constants.SUCCESSFUL,
             response: response
