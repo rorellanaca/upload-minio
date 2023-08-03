@@ -19,7 +19,6 @@ export class MinioClientService {
     /**
      * Creates an instance of MinioClientService.
      * @param {MinioService} minio
-     * @memberof MinioClientService
      */
     constructor(private readonly minio: MinioService) {
         this.logger = new Logger('MinioService');
@@ -29,7 +28,6 @@ export class MinioClientService {
      * Get minio client
      * * npm de minIO que posee los metodo propios de la herramienta a utilizar
      * @readonly
-     * @memberof MinioClientService
      */
     public get client() {
         return this.minio.client;
