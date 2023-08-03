@@ -44,6 +44,7 @@ export class FileUploadController {
         return await this.fileUploadService.uploadFile(file, fileResquet);
     }
 
+    /*test de comentario*/
     @Get()
     async listByClient(@Query('bucketName') bucketName: string, @Query('path') path: string) {
         return await this.minioClientServices.getObjectByClient(bucketName, path)
